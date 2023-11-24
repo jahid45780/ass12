@@ -2,7 +2,7 @@
 
 const Footer = () => {
     return (
-        <div>
+        <div className=" mt-5" >
           
 
           <footer style={{backgroundImage: 'url(https://i.ibb.co/mJdpn5k/399965459-1855806594836761-7411107041480967299-n.jpg)'}} className="px-4 divide-y text-black ">

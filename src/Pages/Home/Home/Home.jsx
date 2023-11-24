@@ -1,9 +1,12 @@
+import ExtraContact from "../ExtraPart/ExtraContact";
+import ExtraPart from "../ExtraPart/ExtraPart";
 
 
 const Home = () => {
     return (
         <div>
-            <h1> this home </h1>
+        <ExtraPart></ExtraPart>
+        <ExtraContact></ExtraContact>
         </div>
     );
 };

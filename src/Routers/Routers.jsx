@@ -3,6 +3,7 @@ import {
   } from "react-router-dom";
 import Main from "../LayOut/Main";
 import Home from "../Pages/Home/Home/Home";
+import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
 
 
 
@@ -10,6 +11,7 @@ import Home from "../Pages/Home/Home/Home";
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <ErrorPage></ErrorPage>,
       children:[
         {
              path:'/',
