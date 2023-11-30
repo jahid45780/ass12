@@ -5,7 +5,7 @@ const Footer = () => {
         <div className=" mt-5" >
           
 
-          <footer style={{backgroundImage: 'url(https://i.ibb.co/mJdpn5k/399965459-1855806594836761-7411107041480967299-n.jpg)'}} className="px-4 divide-y text-black ">
+          <footer className="px-4 bg-slate-400 divide-y text-black ">
          
         <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
             <div className="lg:w-1/3">

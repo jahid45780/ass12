@@ -1,4 +1,8 @@
+
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import Swal from "sweetalert2";
+import { useContext } from "react";
 
 
 const Navbar = () => {
@@ -6,14 +10,27 @@ const Navbar = () => {
    const navLink = <>
    
           <li> <Link> Home </Link> </li>
-          <li> <Link> Add Articles </Link> </li>
-          <li> <Link> All Articles </Link> </li>
+          <li> <Link to='/addArticle' > Add Articles </Link> </li>
+          <li> <Link to='/allArticle' > All Articles </Link> </li>
           <li> <Link> My Articles </Link> </li>
           <li> <Link> Subscription </Link> </li>
            <li> <Link> Dashboard </Link> </li>
           <li> <Link> Premium Articles </Link> </li>
           
    </>
+
+const {user, logOut}= useContext(AuthContext)
+     
+const handleSingOut = () => {
+ logOut()
+   .then(result => {
+     console.log(result)
+     Swal.fire('LogOut Successfully')
+   })
+
+   .catch()
+
+}
 
     return (
         <div>
@@ -48,7 +65,30 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+  {
+           user ? (<div className="dropdown dropdown-end">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10   rounded-full">
+                    <img src={user?.photoURL} />
+                  </div>
+                </label>
+                <ul tabIndex={0} className="menu menu-sm bg-green-400 dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-60">
+                  <li>
+                    <a className="justify-between">
+                      Profile
+                      <span> <img className=" w-7 h-7 rounded-full" src={user?.photoURL} alt="" /> </span>
+                    </a>
+                    <p className=" text-xl p-3 " > {user?.displayName} </p>
+                    <p className=" -ml-2  p-3 " > {user?.email} </p>
+                   
+                  </li>
+                  <button onClick={ handleSingOut} className=" btn btn-secondary mr-4 " > Sign Out </button>
+             
+                </ul>
+              </div>)
+               : (<Link to='/login' > <button className=" btn btn-secondary mr-4 " > Login </button> </Link>)
+                   
+            }
   </div>
 </div>
         </div>
