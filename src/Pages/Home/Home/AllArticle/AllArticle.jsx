@@ -9,7 +9,7 @@ const AllArticle = () => {
 
 	const [trNews, setTrNews] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/allArticles')
+        fetch('https://the-final-project-12-server.vercel.app/allArticles')
         .then(res => res.json())
         .then(data => setTrNews(data) )
     },[])

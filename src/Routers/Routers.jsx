@@ -42,7 +42,7 @@ import NewsDetail from "../Pages/Home/Home/NewsDetaial/NewsDetail";
         {
           path:'/allNews/:id',
           element:<NewsDetail></NewsDetail>,
-          loader:({params})=> fetch(`http://localhost:5000/allArticles/${params.id}`)
+          loader:({params})=> fetch(`https://the-final-project-12-server.vercel.app/${params.id}`)
         }
       ]
       

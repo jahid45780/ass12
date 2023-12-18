@@ -52,6 +52,12 @@
                         <label className="label">
                             <span className="label-text">Tags</span>
                         </label>
+                        <input type="text"
+                            placeholder="Tags"
+
+                            required
+                            className="input input-bordered w-full" />
+                        
 {/* 
                         <Select
       closeMenuOnSelect={false}

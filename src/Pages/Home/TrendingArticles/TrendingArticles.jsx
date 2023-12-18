@@ -5,7 +5,7 @@ import NewsSlider from "../../../Componten/NewsSlider/NewsSlider";
 const TrendingArticles = () => {
     const [trending, setTrending] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/trNews')
+        fetch('https://the-final-project-12-server.vercel.app/trNews')
         .then(res => res.json())
         .then(data => setTrending(data) )
     },[])
@@ -21,7 +21,7 @@ const TrendingArticles = () => {
           
          </div>
 
-        </div>
+        </div>   
     );
 };
 
